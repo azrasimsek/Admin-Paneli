@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-lightt fixed-left golge" style="flex-direction: column;">
+        <div class="container h-100" style="flex-direction: column;">
+            <a class="navbar-brand" href="/index" style="font-family: 'Dancing Script'; font-size: xx-large;"><img src="/img/developer.png" alt="" style="height:50px;">Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-lists collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav p-3" style="flex-direction: column;">
+                    <span class="sidebar-ul-baslik">- TABLOLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index"><i class="sidebar-icons fa-solid fa-chart-line"></i>İstatistik Paneli</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- PROJE</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projeEkle"><i class="sidebar-icons fa-solid fa-plus"></i>Proje Ekle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projeler"><i class="sidebar-icons fa-solid fa-eye"></i>Projelerimi Göster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projeDuzenle"><i class="sidebar-icons fa-solid fa-pen"></i>Projemi Düzenle</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- AYARLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/ayarlar"><i class="sidebar-icons fa-solid fa-gear"></i>Hesap Ayarları</a>
+                    </li>
+                </ul>
+                <div class="sidebar-exit mb-3"><a href="/login"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #f20d0d;"></i></a></div>
+            </div>
+        </div>
+    </nav>
+    <div class="padding-left">
+        <div class="container mt-4">
+            <div class="mb-3 amblem">
+                <img src="/img/amblem2.png" alt="">
+            </div>
+
+            <div class="card p-4 border border-0 rounded golge">
+                <h4 class="mb-3">Kullanıcı Bilgileri</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="" class="d-block form-label">İsim :</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" value="Azra">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="d-block form-label">E-mail :</label>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="mail" class="form-control" value="azra@gmail.com">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="d-block form-label">Şifre :</label>
+                       <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                            <input type="password" class="form-control" value="1234">
+                        </div> 
+                    </div>
+                        
+                    <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+                </form>
+            </div>
+
+            <div class="card rounded border-0 mt-4 golge p-1">
+                <div class="card-body">
+                    <div class="mb-0 col-12">
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">Hesabınızı silmek istediğinizden emin misiniz?</h4>
+                            <p><i class="me-2 fa-solid fa-triangle-exclamation fa-beat-fade"></i>Hesabınızı sildikten sonra geri dönüş yoktur. Lütfen emin olun.</p>
+                        </div>
+                        <form action="/login" method="get">
+                            <div class="form-check">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Hesabımın devre dışı bırakılmasını onaylıyorum
+                                </label>
+                            </div>
+                            <button class="mt-2 btn-ayarlar btn btn-danger">Hesabı devre dışı bırak</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-projeEkle footer bg-footer-theme">
+            <div class="container d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                ©
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                Azra Şimşek
+              </div>
+              <div>
+                <a href="/index" class="footer-link me-4" target="_blank">Anasayfa</a>
+                <a href="/projeler" target="_blank" class="footer-link me-4">Projeler</a>
+                <a href="/ayarlar" target="_blank" class="footer-link me-4">Ayarlar</a>
+              </div>
+            </div>
+        </footer>
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

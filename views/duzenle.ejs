@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Güncelle</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+        svg {
+            font-family: "Libre Baskerville", sans-serif;
+            width: 100%; height: 100%;
+        }
+        svg text {
+            animation: stroke 5s infinite alternate;
+            stroke-width: 2;
+            stroke: #365FA0;
+            font-size: 70px;
+        }
+        @keyframes stroke {
+            0%   {
+                fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+                stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+            }
+            70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+            80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+            100% {
+                fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+                stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+            }
+        }
+
+        .wrapper {background-color: #F6F6F6 ;
+            border-radius: 50px;
+            height: 105px;};
+
+
+        .sp-1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 8px solid;
+            border-color: #766DF4 #0000;
+            animation: s1 1s infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: white;
+            }
+
+    @keyframes s1 {
+    to {
+        transform: rotate(.5turn);
+    }
+    }
+
+    .hidden {
+    display: none;
+    }
+
+    </style>
+</head>
+<body class="mt-2">
+    <div class="custom-loader sp-1"></div>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-lightt fixed-left golge" style="flex-direction: column;">
+        <div class="container h-100" style="flex-direction: column;">
+            <a class="navbar-brand" href="/index" style="font-family: 'Dancing Script'; font-size: xx-large;"><img src="/img/developer.png" alt="" style="height:50px;">Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-lists collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav p-3" style="flex-direction: column;">
+                    <span class="sidebar-ul-baslik">- TABLOLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index"><i class="sidebar-icons fa-solid fa-chart-line"></i>İstatistik Paneli</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- PROJE</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ekle"><i class="sidebar-icons fa-solid fa-plus"></i>Proje Ekle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/goster"><i class="sidebar-icons fa-solid fa-eye"></i>Projelerimi Göster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/duzenle"><i class="sidebar-icons fa-solid fa-pen"></i>Projemi Düzenle</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- AYARLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ayarlar"><i class="sidebar-icons fa-solid fa-gear"></i>Hesap Ayarları</a>
+                    </li>
+                </ul>
+                <div class="sidebar-exit mb-3"><a href="/login"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #f20d0d;"></i></a></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="padding-left">
+        <div class="container mt-5">
+            <div class="wrapper">
+                <svg>
+                    <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                        Proje Güncelle
+                    </text>
+                </svg>
+            </div>
+
+            <h2 class="text-center mb-4"></h2>
+            <form action="/duzenle/<%= proje.id %>" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Proje Adı:</label>
+                    <input type="text" name="projeAdi" class="form-control" value="<%= proje.projeAdi %>" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">Proje Sayısı:</label>
+                    <input type="text" name="projeSayisi" class="form-control" value="<%= proje.projeSayisi %>" required></input>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">Proje Açıklaması:</label>
+                    <textarea name="projeAciklamasi" class="form-control" required><%= proje.projeAciklamasi %></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">Başlangıç Tarihi:</label>
+                    <input type="date" name="baslangicTarihi" class="form-control" value="<%= proje.baslangicTarihi %>" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tamamlanma Oranı (%):</label>
+                    <input type="range" name="tamamlanmaOrani" class="form-range" min="0" max="100"  value="<%= proje.tamamlanmaOrani %>" oninput="updateProgressValue(this.value)" required>
+                    <span id="progress-value"><%= proje.tamamlanmaOrani %></span>
+                </div>
+        
+                <!-- Mevcut Resimler -->
+                <div class="mb-3">
+                    <label class="form-label">Mevcut Resimler:</label><br>
+                    <% if (proje.resimler && Array.isArray(proje.resimler)) { %>
+                        <% proje.resimler.forEach(function(resim) { %>
+                            <div class="d-inline-block position-relative">
+                                <!-- Resim -->
+                                <img src="/img/<%= resim %>" width="100" class="img-thumbnail m-1">
+                                
+                                <!-- Silme Butonu -->
+                                <button class="btn btn-danger btn-sm position-absolute top-0 end-0"
+                                    onclick="silResim('<%= resim %>')">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+                <!-- Sürükle Bırak Alanı -->
+                <div class="mb-3">
+                    <label class="form-label">Proje Fotoğrafları</label>
+                    <div id="drop-area" class="drop-area">
+                        <p>Resimleri buraya sürükleyin veya tıklayarak seçin</p>
+                        <input type="file" id="fileInput" name="projeResimler" multiple required>
+                    </div>
+                    <div id="preview" class="preview"></div>
+                </div>
+        
+                <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+            </form>
+        </div>
+        <footer class="footer-projeEkle footer bg-footer-theme">
+            <div class="container d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                <img src="/img/code.png" width="50px" height="50px" alt="">
+                ©
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                Azra Şimşek
+              </div>
+              <div>
+                <a href="/index" class="footer-link me-4" target="_blank">Anasayfa</a>
+                <a href="/projeler" target="_blank" class="footer-link me-4">Projeler</a>
+                <a href="/ayarlar" target="_blank" class="footer-link me-4">Ayarlar</a>
+              </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+            document.querySelector(".custom-loader").classList.add("hidden");
+            }, 1000); // 1 saniye sonra gizlenecek
+
+
+            const dropArea = document.getElementById("drop-area");
+            const fileInput = document.getElementById("fileInput");
+            const preview = document.getElementById("preview");
+
+            // Dosya sürükleyerek bırakma
+            dropArea.addEventListener("dragover", (event) => {
+                event.preventDefault();
+                dropArea.style.backgroundColor = "#f2ebff";
+            });
+
+            dropArea.addEventListener("dragleave", () => {
+                dropArea.style.backgroundColor = "#bcabdc";
+            });
+
+            dropArea.addEventListener("drop", (event) => {
+                event.preventDefault();
+                dropArea.style.backgroundColor = "#f2ebff";
+
+                fileInput.files = event.dataTransfer.files;
+                showPreview(fileInput.files);
+            });
+
+            // Dosya seçildiğinde önizleme göster
+            fileInput.addEventListener("change", () => {
+                showPreview(fileInput.files);
+            });
+
+            function showPreview(files) {
+                preview.innerHTML = "";
+                Array.from(files).forEach((file) => {
+                    const img = document.createElement("img");
+                    img.src = URL.createObjectURL(file);
+                    preview.appendChild(img);
+                });
+            }
+    });
+
+    function silResim(resimYolu) {
+        if (confirm("Bu resmi silmek istediğinize emin misiniz?")) {
+            fetch('/resim-sil/' + resimYolu, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload(); // Sayfayı yenile
+                    } else {
+                        alert("Resim silinemedi!");
+                    }
+                })
+                .catch(err => console.error("Hata:", err));
+        }
+    }
+
+        function updateProgressValue(value) {
+            document.getElementById("progress-value").textContent = value + "%";
+            applyFilters(data); // Filtreyi uygula
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

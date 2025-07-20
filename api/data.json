@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "projeAdi": "Web Projesi",
+    "projeSayisi": "1",
+    "projeAciklamasi": "Node.js ile web projesi",
+    "baslangicTarihi": "2025-03-06T00:33",
+    "tamamlanmaOrani": "80",
+    "projeResmi": "/img/resim-1.jpeg"
+  },
+  {
+    "id": 2,
+    "projeAdi": "Mobil Uygulama",
+    "projeSayisi": "2",
+    "projeAciklamasi": "React Native ile mobil uygulama",
+    "baslangicTarihi": "2025-03-06T00:35",
+    "tamamlanmaOrani": "50",
+    "projeResmi": "/img/1741210632303.jpeg"
+  },
+  {
+    "id": 3,
+    "projeAdi": "LLM (NLP) model",
+    "projeSayisi": "2",
+    "projeAciklamasi": "Grafiklerin niceliklerinin çıkarılması ve LLM (NLP) modelleriyle istatistiksel yaklaşımları hakkında yorum çıkarılması",
+    "baslangicTarihi": "2025-03-03T00:37",
+    "tamamlanmaOrani": "0",
+    "projeResmi": "/img/1741295070956.jpeg"
+  },
+  {
+    "id": 4,
+    "projeAdi": "YZ destekli DOM kamera arayüzü tasarımı",
+    "projeSayisi": "1",
+    "projeAciklamasi": "- DOM kamerasının çalışır hale getirilmesi\r\n- UTP veya Koaksiyel üzerinden veri aktarımının sağlanması",
+    "baslangicTarihi": "2025-02-24T23:32",
+    "tamamlanmaOrani": "20",
+    "projeResmi": "/img/1741293178281.png"
+  },
+  {
+    "id": 5,
+    "projeAdi": "TÜBİTAK projesi",
+    "projeSayisi": "1",
+    "projeAciklamasi": "Mevcut TÜBİTAK tarafından desteklenen Deeptech-TrafficAI projesinin veri etiketlerinin annotasyonu ve gerekmesi halinde veri artırılması\r\n",
+    "baslangicTarihi": "2025-02-24T00:02",
+    "tamamlanmaOrani": "100",
+    "projeResmi": "/img/1741457855029.jpeg"
+  },
+  {
+    "id": 6,
+    "projeAdi": "örnek2",
+    "projeSayisi": "1",
+    "projeAciklamasi": "ör",
+    "baslangicTarihi": "2025-03-08T21:16",
+    "tamamlanmaOrani": "%70",
+    "projeResmi": "/img/1741457828834.jpeg"
+  },
+  {
+    "id": 7,
+    "projeAdi": "annemgil",
+    "projeSayisi": "1",
+    "projeAciklamasi": "annem ile",
+    "baslangicTarihi": "2025-03-09T01:21",
+    "tamamlanmaOrani": "100",
+    "projeResmi": "/img/1741472503478.png , /img/1741472503484.jpg , /img/1741472503484.jpeg , /img/1741472503484.jpeg , /img/1741472503485.jpeg, /img/1741548065437.jpeg"
+  },
+  {
+    "id": 8,
+    "projeAdi": "hazra",
+    "projeSayisi": "2",
+    "projeAciklamasi": "hacer azra",
+    "baslangicTarihi": "2025-03-09T11:17",
+    "tamamlanmaOrani": "%60",
+    "projeResmi": "/img/1741508530751.jpg , /img/1741508530765.jpg"
+  },
+  {
+    "id": 9,
+    "projeAdi": "lll",
+    "projeSayisi": "1",
+    "projeAciklamasi": "aaaaaa",
+    "baslangicTarihi": "2025-03-10T00:13",
+    "tamamlanmaOrani": "60",
+    "projeResmi": "/img/1741554847371.jpg, /img/1741554847373.jpg, /img/1741554847378.webp, /img/1741555904521.jpeg, /img/1741555911076.jpeg, /img/1741555919580.jpeg, /img/1741556734107.jpeg"
+  },
+  {
+    "id": 10,
+    "projeAdi": "deneme olsunnnnnnnnnnn",
+    "projeSayisi": "12",
+    "projeAciklamasi": "nolur olsunnnnnnnnnnnnnn",
+    "baslangicTarihi": "2025-03-09T01:05",
+    "tamamlanmaOrani": "100",
+    "projeResmi": "/img/1741557930567.jpg, /img/1741557930569.jpeg, /img/1741557949843.jpg, /img/1741558000289.webp"
+  },
+  {
+    "id": 11,
+    "projeAdi": "UUID ile img yükleme",
+    "projeSayisi": "1",
+    "projeAciklamasi": "ilk deneme",
+    "baslangicTarihi": "2025-03-19T16:42",
+    "tamamlanmaOrani": "80",
+    "projeResmi": "/img/c533b83d-0421-43a1-bebe-6f084ef69de1.png, /img/894f28cf-cec2-4df7-885e-cfb9ab2fde33.png, /img/068ca99e-cb45-4724-906d-d2fd2d198609.jpg"
+  },
+  {
+    "id": 12,
+    "projeAdi": "uuid ile ikinci proje",
+    "projeSayisi": "2",
+    "projeAciklamasi": "ikinci deneme ",
+    "baslangicTarihi": "2025-03-20T09:41",
+    "tamamlanmaOrani": "%40",
+    "projeResmi": "/img/062992c8-3996-4b47-b324-2de150e31790.jpg,/img/ba7a80f5-6f0c-4579-a46a-a75660e1d29b.webp"
+  },
+  {
+    "id": 13,
+    "projeAdi": "uuid ile üçüncü proje",
+    "projeSayisi": "1",
+    "projeAciklamasi": "3.",
+    "baslangicTarihi": "2025-03-20T09:50",
+    "tamamlanmaOrani": "60",
+    "projeResmi": "/img/643bd112-e73c-4a75-939e-2d1e5f6bcaa1.jpg, /img/bbd4edbc-9cf4-44f5-81a1-8d265db59296.png, /img/ff3aa1bf-196b-4b9a-a93e-8c103e52d7ca.jpeg"
+  },
+  {
+    "id": 14,
+    "projeAdi": "olsun?",
+    "projeSayisi": "2",
+    "projeAciklamasi": "proje açıklaması",
+    "baslangicTarihi": "2025-06-22T23:46",
+    "tamamlanmaOrani": "%90",
+    "projeResmi": "/img/4d216741-37a3-43c7-a744-83491a335028.jpg"
+  },
+  {
+    "id": 15,
+    "projeAdi": "LALALAA",
+    "projeSayisi": "1",
+    "projeAciklamasi": "sdsadasd",
+    "baslangicTarihi": "2025-06-25T19:21",
+    "tamamlanmaOrani": "%80",
+    "projeResmi": "/img/02a827b1-7977-4177-8d40-ba13ebfe5a80.jpeg,/img/ff3033fb-709b-4761-b5da-b4d93c9708d9.jpeg"
+  }
+]

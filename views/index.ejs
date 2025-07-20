@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />   
+</head>
+<body class="body-index bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-lightt fixed-left golge" style="flex-direction: column;">
+        <div class="container h-100" style="flex-direction: column;">
+            <a class="navbar-brand" href="/index" style="font-family: 'Dancing Script'; font-size: xx-large;"><img src="/img/developer.png" alt="" style="height:50px;">Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-lists collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav p-3" style="flex-direction: column;">
+                    <span class="sidebar-ul-baslik">- TABLOLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/index"><i class="sidebar-icons fa-solid fa-chart-line"></i>İstatistik Paneli</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- PROJE</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ekle"><i class="sidebar-icons fa-solid fa-plus"></i>Proje Ekle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/goster"><i class="sidebar-icons fa-solid fa-eye"></i>Projelerimi Göster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/duzenle"><i class="sidebar-icons fa-solid fa-pen"></i>Projemi Düzenle</a>
+                    </li>
+                    <span class="sidebar-ul-baslik">- AYARLAR</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ayarlar"><i class="sidebar-icons fa-solid fa-gear"></i>Hesap Ayarları</a>
+                    </li>
+                </ul>
+                <div class="sidebar-exit mb-3"><a href="/login"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180" style="color: #f20d0d;"></i></a></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="padding-left">
+
+        <!-- Ana İçerik -->
+        <div class="container mt-5">
+            <div class="mb-3 amblem" style="margin-top: 5.5rem;">
+                <img src="/img/amblem2.png" alt="">
+            </div>
+            <div class="arama-kutusu mb-5">
+                <input class="arama-yazi" type="text" placeholder="Arayacağınız Kelime">
+                <a class="arama-buton" href="#">
+                <i class="fas fa-search"></i>
+                  </a>
+            </div>
+             <div class="mtt-5 icerikler container">
+                <div class="row">
+                    <div class="col-sm-12 mb-4">
+                        <div class="d-flex icerik flex-column mt-3">
+                            <div class="icerik-items">
+                                <div class="card  mb-3 golge" style="max-width: 100%; border: 0;">
+                                    <div class="row g-0">
+                                        <div class="col-md-8">
+                                            <div class="card-body p-5">
+                                                <h5 class="card-title">Tebrikler Azra! 🎉</h5>
+                                                 <p class="card-text">Bugün <span class="fw-bold">72%</span> daha fazla satış yaptınız .</p>
+                                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 icerik-item">
+                                            <img src="/img/man-with-laptop-light.png" class="card-kullanici img-fluid rounded-start h-100" alt="...">
+                                        </div>
+                                        
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="golge chart-size mt-4 chart-1 bg-white">
+                                <div class="col-sm-7 chart-1-canvas"><canvas id="myChart"></canvas></div>
+                                <div class="col-sm-5 border-left chart-1-kategori" style="padding: 10px;">
+                                    <div class="d-flex">
+                                        <div class="col-sm-3"><i class="chart-icon fa-solid fa-mobile-screen-button"></i></div>
+                                        <div class="col-sm-9 kategoriler">
+                                            <div class="text-muted d-flex align-items-center justify-content-between gap-2 w-100">
+                                                <div>
+                                                    <h6>Elektronik</h6>
+                                                    <p class="chart-p">Mobil, Kulaklık, TV</p>
+                                                </div>
+                                                <div style="font-weight: 600;font-size: small;">82,5 bin</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-sm-3"><i class="chart-icon2 fa-solid fa-shirt"></i></div>
+                                        <div class="col-sm-9 kategoriler">
+                                            <div class="text-muted d-flex align-items-center justify-content-between gap-2 w-100">
+                                                <div>
+                                                    <h6>Moda</h6>
+                                                    <p class="chart-p">Tişört, Kot, Ayakkabı</p>
+                                                </div>
+                                                <div style="font-weight: 600;font-size: small;">23,8 bin</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-sm-3"><i class="chart-icon3 fa-solid fa-house"></i></div>
+                                        <div class="col-sm-9 kategoriler">
+                                            <div class="text-muted d-flex align-items-center justify-content-between gap-2 w-100">
+                                                <div>
+                                                    <h6>Dekor</h6>
+                                                    <p class="chart-p">Güzel Sanatlar, Yemek</p>
+                                                </div>
+                                                <div style="font-weight: 600;font-size: small;">849 bin</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-sm-3"><i class="chart-icon4 fa-solid fa-futbol"></i></div>
+                                        <div class="col-sm-9 kategoriler">
+                                            <div class="text-muted d-flex align-items-center justify-content-between gap-2 w-100">
+                                                <div>
+                                                    <h6>Spor</h6>
+                                                    <p class="chart-p">Futbol, Voleybol Takımı</p>
+                                                </div>
+                                                <div style="font-weight: 600;font-size: small;">99</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-sm-3"><i class="chart-icon5 fa-solid fa-kitchen-set"></i></div>
+                                        <div class="col-sm-9 kategoriler">
+                                            <div class="text-muted d-flex align-items-center justify-content-between gap-2 w-100">
+                                                <div>
+                                                    <h6>Mutfak</h6>
+                                                    <p class="chart-p">Ev ve Mutfak Eşyaları</p>
+                                                </div>
+                                                <div style="font-weight: 600;font-size: small;">100 bin</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="golge rounded mt-4 h-350 d-flex justify-content-center align-items-center bg-white">
+                                <div class="chart-container">
+                                    <h3>Toplam Gelir</h3>
+                                    <canvas id="incomeChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="golge card mt-3 border-0" >
+                                    <div class="card-body">
+                                      <h5 class="card-title"><img class="veri-icon" src="/img/chart-success.png" alt=""></h5>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Kar</h6>
+                                      <p class="card-text">12.628 dolar</p>
+                                      <div style="color: green;">+72,80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="golge card mt-3 border-0" >
+                                    <div class="card-body">
+                                      <h5 class="card-title"><img class="veri-icon" src="/img/wallet-info.png" alt=""></h5>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Satış</h6>
+                                      <p class="card-text">$4.679</p>
+                                      <div style="color: green;">+28,42%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="golge card mt-3 border-0">
+                                    <div class="card-body">
+                                      <h5 class="card-title"><img class="veri-icon" src="/img/paypal.png" alt=""></h5>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">Ödemeler</h6>
+                                      <p class="card-text">$4.679</p>
+                                      <div style="color: red;">-14.82%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="golge card border-0 mt-3">
+                                    <div class="card-body">
+                                      <h5 class="card-title"><img class="veri-icon" src="/img/cc-primary.png" alt=""></h5>
+                                      <h6 class="card-subtitle mb-2 text-body-secondary">İşlemler</h6>
+                                      <p class="card-text">$4.679</p>
+                                      <div style="color: green;">+28.14%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 d-flex rounded justify-content-center align-items-center bg-white mt-3 golge">
+                                <div class="dashboard-container dashBoard">
+                                    <div class="tabs">
+                                        <button class="tab active-tab" onclick="updateChart('income')">Gelir</button>
+                                        <button class="tab" onclick="updateChart('expenses')">Giderler</button>
+                                        <button class="tab" onclick="updateChart('profit')">Kâr</button>
+                                    </div>
+                                    <div class="balance" id="balanceText">$459.10 <span class="small-text">⬆ %42,9</span></div>
+                                    <canvas id="incomeChartt"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                   
+
+        <div class="container mt-3">
+            <div id="harita"></div>
+
+            <!-- Sağ Tık / Uzun Basma Menüsü -->
+            <ul class="custom-menu" id="context-menu">
+                <li onclick="konumuAl()">📍 Konumu Al</li>
+                <li onclick="burayaYolla()">🛣 Buraya Yönlendir</li>
+                <li onclick="buradanYolla()">🚶‍♂️ Buradan Yönlendir</li>
+                <li onclick="adresiGoster()">🏡 Adresi Göster</li>
+                <li onclick="haritaOrtala()">🎯 Haritayı Buraya Ortala</li>
+            </ul>
+        </div>
+        
+
+
+        <footer class="footer-projeEkle footer bg-footer-theme">
+            <div class="container d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                ©
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                Azra Şimşek
+              </div>
+              <div>
+                <a href="/index" class="footer-link me-4" target="_blank">Anasayfa</a>
+                <a href="/projeler" target="_blank" class="footer-link me-4">Projeler</a>
+                <a href="/ayarlar" target="_blank" class="footer-link me-4">Ayarlar</a>
+              </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let secilenKonum = null;
+        let touchTimer;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('harita').setView([39.92077, 32.85411], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap Katkıda Bulunanlar'
+            }).addTo(map);
+
+            // SAĞ TIK MENÜSÜ (Bilgisayar)
+            map.on("contextmenu", function(e) {
+                secilenKonum = e.latlng;
+                gosterMenu(e.originalEvent.pageX, e.originalEvent.pageY);
+            });
+
+            // MOBİL: Uzun Basınca Menüyü Aç
+            map.on("mousedown", function(e) {
+                touchTimer = setTimeout(function() {
+                    secilenKonum = e.latlng;
+                    gosterMenu(e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.originalEvent.pageX, 
+                               e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.originalEvent.pageY);
+                }, 800); // 0.8 saniye basılı tutunca menü açılır
+            });
+
+            map.on("mouseup", function() {
+                clearTimeout(touchTimer);
+            });
+
+            // Menü dışına tıklanınca menüyü kapat
+            document.addEventListener("click", function() {
+                document.getElementById("context-menu").style.display = "none";
+            });
+        });
+
+        //Konumu Al
+        function konumuAl() {
+            if (secilenKonum) {
+                alert("Seçilen Konum: " + secilenKonum.lat + ", " + secilenKonum.lng);
+            }
+        }
+
+        //Buraya Yönlendir
+        function burayaYolla() {
+            if (secilenKonum) {
+                window.open(`https://www.google.com/maps/dir/?api=1&destination=${secilenKonum.lat},${secilenKonum.lng}`, '_blank');
+            }
+        }
+
+        //Buradan Yönlendir
+        function buradanYolla() {
+            if (secilenKonum) {
+                window.open(`https://www.google.com/maps/dir/?api=1&origin=${secilenKonum.lat},${secilenKonum.lng}`, '_blank');
+            }
+        }
+
+        //Adresi Göster (Reverse Geocoding)
+        function adresiGoster() {
+            if (secilenKonum) {
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${secilenKonum.lat}&lon=${secilenKonum.lng}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        alert("Adres: " + data.display_name);
+                    })
+                    .catch(err => console.error(err));
+            }
+        }
+
+        //Haritayı Ortala
+        function haritaOrtala() {
+            if (secilenKonum) {
+                var map = L.map('harita').setView([secilenKonum.lat, secilenKonum.lng], 13);
+            }
+        }
+
+        // Menü Gösterme
+        function gosterMenu(x, y) {
+            var menu = document.getElementById("context-menu");
+            menu.style.display = "block";
+            menu.style.left = x + "px";
+            menu.style.top = y + "px";
+        }
+    </script>
+    <script src="/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
